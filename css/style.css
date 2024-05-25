@@ -1,0 +1,134 @@
+body{
+    background: linear-gradient(0.25turn, #A084DC,#c3b8cf,#c0b0e3);
+}
+h3, label,.text-col{
+    font-family: cursive;
+
+}
+.heading-title h3{
+    top:10%;
+}
+.heading-title h3::before{
+    content: "";
+    position: absolute;
+    background-color: rgb(220, 204, 231);
+    width: 100%;
+    height:50%;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    transition-duration: 0.3s;
+}
+.heading-title h3:hover::before{
+    top: 0%;
+    height: 100%;
+}
+
+.heading h3{
+    top: 15%;
+}
+img{
+    width: 330px;
+    height: 100px;
+    left: -15%;
+    top: 50%;
+}
+label{
+    top: 20%;
+    left: 20px;
+    transition: 0.3s;
+}
+
+input:focus ~label,
+input:valid ~label{
+    top: -25%;
+    left: 15px;
+    padding: 0 2px;
+}
+
+
+.submit{
+    left: 50%;
+    transform: translate(-50%);
+}
+i{
+    cursor: pointer;
+}
+.content img{
+width: 250px;
+height: 250px;
+}
+
+.error .overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1;
+}
+.error .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #eee8e8d0;
+    width: 450px;
+    height: 450px;
+    z-index: 2;
+}
+
+.error .close-btn{
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 35px;
+    height: 35px;
+    background-color: #A084DC;
+    color: #ffffffa9;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+table {
+    --bs-table-striped-bg:  #dee3e589  !important;
+    --bs-table-bg: #9a8cb992 !important;
+margin: 10px 0px;
+}
+th{
+    font-family: cursive;
+}
+.search{
+    left: 40%;
+    margin: 4px 0px;
+}
+
+.bg-colo{
+    background-color: #dee3e589 ;
+}
+.text-col{
+color: #866cbe ;
+}
+.image{
+    animation: float-up-down 2s ease-in-out infinite both;
+}
+@keyframes float-up-down {
+    0% {
+        -webkit-transform:translateY(0)
+    }
+
+    50% {
+        -webkit-transform: translateY(-10%);
+        transform:translateY(-10%)
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform:translateY(0)
+    }
+}
