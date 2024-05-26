@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookMark</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sevillana&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sevillana&display=swap" rel="stylesheet">
     <link rel="icon" href="assests/bookmark.png">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    
+
     <div class="header d-flex justify-content-center position-relative">
         <div class="heading-title mb-5">
             <h3 class="text-secondary display-5 position-relative z-2">Bookmarker</h3>
@@ -25,34 +25,40 @@
         <div class="heading text-center p-3">
             <h3 class=" text-secondary display-6">Bookmark your favorite sites </h3>
         </div>
-    <div class="row ">
-            <div class="col-md-6">
+        <div class="row ">
+            <div class="col-md-6 ">
                 <div class="image">
-                    <img src="assests/www.png" class=" position-relative img-fluid">
+                    <img src="assests/www.png" class=" position-relative w-50" alt="websit-click">
                 </div>
             </div>
             <div class="col-md-6">
-               <div class="form">
-              <div class="container p-3">
-                <div class="form-group position-relative mt-5">
-                    <input type="text" required class="form-control p-2 border-0 bg-transparent shadow-lg rounded-5" id="sitename" oninput="validation(this)">
-                    <label class="position-absolute text-secondary opacity-75">Site Name</label>
+                <div class="form">
+                    <div class="container p-3">
+                        <div class="form-group position-relative mt-5">
+                            <input type="text" required
+                                class="form-control p-2 border-0 bg-transparent shadow-lg rounded-5" id="sitename"
+                                oninput="validation(this)">
+                            <label class="position-absolute text-secondary opacity-75">Site Name</label>
+                        </div>
+
+                        <div class="form-group position-relative mt-5">
+                            <input type="url" required
+                                class="form-control p-2 border-0 bg-transparent shadow-lg rounded-5" id="siteurl"
+                                oninput="validation(this)">
+                            <label class="position-absolute text-secondary opacity-75">Site URL</label>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="form-group position-relative mt-5">
-                    <input type="url" required class="form-control p-2 border-0 bg-transparent shadow-lg rounded-5" id="siteurl"oninput="validation(this)" >
-                    <label class="position-absolute text-secondary opacity-75">Site URL</label>
-                </div>
-              </div>
-            </div> 
-            <button class="btn  text-white btn-outline-secondary position-relative submit rounded-5" onclick="addsite()" id="submitbtn">Submit</button>
-            <button class="btn  text-white btn-outline-warning position-relative submit rounded-5 d-none" id="editbtn">Edit</button>
-        </div>
-         
+                <button class="btn  text-white btn-outline-secondary position-relative submit rounded-5"
+                    onclick="addsite()" id="submitbtn">Submit</button>
+                <button class="btn  text-white btn-outline-warning position-relative submit rounded-5 d-none"
+                    id="editbtn">Edit</button>
+            </div>
         </div>
     </div>
-  
-        <input type="text" required class="search form-control p-2 border-0  rounded-5 w-25 position-relative mt-5 bg-colo" placeholder="Search" id="searching" onkeyup="search()">
+
+    <input type="text" required class="search form-control p-2 border-0  rounded-5  position-relative mt-5 bg-colo w-25"
+        placeholder="Search" id="searching" onkeyup="search()">
     <div class="container my-5">
         <table class="custom-table-bg table text-center table-striped table-borderless table-responsive-md ">
             <thead>
@@ -61,28 +67,29 @@
                 <th>Actions</th>
             </thead>
             <tbody id="tableBody">
-                
+
             </tbody>
         </table>
     </div>
     <div class="error d-none" id="popup">
         <div class="overlay"></div>
         <div class="content text-center rounded-3">
-         <div class="close-btn" id="closebtn" onclick="btnclose()">&times;</div>
-         <img src="assests/400 Error Bad Request-pana.png">
-         <h3>Site Name or Url is not valid, Please follow the rules below :</h3>
-         <ul class="list-unstyled p-3">
-           <div class="instruct d-flex align-items-center gap-3">
-            <i class="fa-solid fa-arrow-right"></i>
-            <li class="text-col">Site name must contain at least 3 characters</li>
-           </div>
-           <div class="instruct d-flex align-items-center gap-3">
-            <i class="fa-solid fa-arrow-right "></i>
-            <li class="text-col">Site URL must be a valid one</li>
-           </div>
-         </ul>
+            <div class="close-btn position-absolute text-center rounded-circle" id="closebtn" onclick="btnclose()"><i
+                    class="fa-solid fa-xmark fa-xs"></i></div>
+            <img src="assests/400 Error Bad Request-pana.png" alt="error-message">
+            <h3>Site Name or Url is not valid, Please follow the rules below :</h3>
+            <ul class="list-unstyled p-3">
+                <div class="instruct d-flex align-items-center gap-3">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    <li class="text-col">Site name must contain at least 3 characters</li>
+                </div>
+                <div class="instruct d-flex align-items-center gap-3">
+                    <i class="fa-solid fa-arrow-right "></i>
+                    <li class="text-col">Site URL must be a valid one</li>
+                </div>
+            </ul>
         </div>
-     </div>
+    </div>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>

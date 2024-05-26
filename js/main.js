@@ -9,8 +9,6 @@ var sitearr = JSON.parse(localStorage.getItem("website")) ?? [];
 display()
 
 function addsite() {
-
-
     if (validation(Sitename) && validation(Siteurl)) {
         var website = {
             sitename: Sitename.value,
@@ -20,12 +18,12 @@ function addsite() {
         ondatachange();
         clearform();
     }
-    else{
-        popup.classList.replace('d-none','d-block')
+    else {
+        popup.classList.replace('d-none', 'd-block')
     }
 }
-function btnclose(){
-    popup.classList.replace('d-block','d-none')
+function btnclose() {
+    popup.classList.replace('d-block', 'd-none')
 }
 function validation(ele) {
     var regex = {
@@ -43,22 +41,21 @@ function validation(ele) {
         ele.classList.remove('is-valid')
         return false
     }
-
 }
 function display() {
     var box = ""
     for (var i = 0; i < sitearr.length; i++) {
         box +=
             `
-    <tr>
-        <td>${i}</td>
-        <td>${sitearr[i].sitename}</td>
-        <td class="d-flex justify-content-center align-items-center text-center gap-3 p-3">
-        <i class="fa-regular fa-pen-to-square text-success" onclick=updatesite(${i})></i>
-        <i class="fa-solid fa-eye  text-info" onclick=gotourl(${i})></i>
-        <i class="fa-solid fa-trash text-danger " onclick=deletesite(${i})></i>
-        </td>
-    </tr>
+        <tr>
+            <td>${i}</td>
+            <td>${sitearr[i].sitename}</td>
+            <td class="d-flex justify-content-center align-items-center text-center gap-3 p-3">
+            <i class="fa-regular fa-pen-to-square text-success" onclick=updatesite(${i})></i>
+            <i class="fa-solid fa-eye  text-info" onclick=gotourl(${i})></i>
+            <i class="fa-solid fa-trash text-danger " onclick=deletesite(${i})></i>
+            </td>
+        </tr>
     `
     }
     document.getElementById("tableBody").innerHTML = box
@@ -111,15 +108,15 @@ function search() {
         if (sitearr[i].sitename.toLowerCase().includes(searchterm.toLowerCase())) {
             box +=
                 `
-        <tr>
-        <td>${i}</td>
-        <td>${sitearr[i].sitename}</td>
-        <td class="d-flex justify-content-center align-items-center text-center gap-3 p-3">
-        <i class="fa-regular fa-pen-to-square text-success" onclick=updatesite(${i})></i>
-        <i class="fa-solid fa-eye  text-info" onclick=gotourl(${i})></i>
-        <i class="fa-solid fa-trash text-danger " onclick=deletesite(${i})></i>
-        </td>
-        </tr>
+            <tr>
+                <td>${i}</td>
+                <td>${sitearr[i].sitename}</td>
+                <td class="d-flex justify-content-center align-items-center text-center gap-3 p-3">
+                <i class="fa-regular fa-pen-to-square text-success" onclick=updatesite(${i})></i>
+                <i class="fa-solid fa-eye  text-info" onclick=gotourl(${i})></i>
+                <i class="fa-solid fa-trash text-danger " onclick=deletesite(${i})></i>
+                </td>
+            </tr>
         `
         }
     }
