@@ -41,6 +41,13 @@ img {
     left: -15%;
     top: 50%;
 }
+@media screen and (max-width: 770px) {
+    img {
+      left: 25%;
+      top: 10px;
+    }
+
+  }
 
 label {
     top: 20%;
